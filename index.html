@@ -7,21 +7,26 @@
 
 <meta name="description" content="Профессиональная уборка квартир в Днепре. Быстро, качественно, от 800 грн.">
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
 <style>
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
-  background: linear-gradient(135deg, #eef2f3, #d9e2ec);
+  font-family: 'Inter', sans-serif;
+  background: radial-gradient(circle at top, #eaf2ff, #d9e2ec);
+  color: #1f2937;
 }
 
-/* Анимации */
-@keyframes fadeIn {
+/* Анимация */
+@keyframes fadeUp {
   from {opacity: 0; transform: translateY(20px);}
   to {opacity: 1; transform: translateY(0);}
 }
 
 .container {
-  max-width: 1000px;
+  max-width: 1100px;
   margin: auto;
   padding: 20px;
 }
@@ -29,78 +34,85 @@ body {
 /* HERO */
 .hero {
   text-align: center;
-  padding: 60px 20px;
-  animation: fadeIn 0.6s ease;
+  padding: 80px 20px;
+  animation: fadeUp 0.7s ease;
 }
 
 .hero h1 {
-  font-size: 36px;
+  font-size: 42px;
   margin-bottom: 10px;
+  letter-spacing: -1px;
 }
 
 .hero p {
   font-size: 18px;
-  color: #555;
+  color: #4b5563;
 }
 
 .price {
-  font-size: 22px;
-  margin: 15px 0;
-  font-weight: bold;
+  font-size: 24px;
+  margin: 20px 0;
+  font-weight: 700;
 }
 
 /* КНОПКИ */
-button, .btn {
-  padding: 14px;
-  border-radius: 10px;
-  font-size: 16px;
-  font-weight: bold;
-  border: none;
-  cursor: pointer;
-  transition: 0.2s ease;
+.btn {
   display: inline-block;
+  padding: 14px 22px;
+  border-radius: 12px;
+  font-weight: 600;
   text-decoration: none;
+  transition: 0.25s ease;
+  margin: 5px;
 }
 
 .btn-primary {
-  background: #2ecc71;
+  background: linear-gradient(135deg, #22c55e, #16a34a);
   color: white;
+  box-shadow: 0 10px 25px rgba(34,197,94,0.25);
 }
 
 .btn-primary:hover {
-  background: #27ae60;
-  transform: translateY(-2px);
+  transform: translateY(-3px);
 }
 
 .btn-secondary {
-  background: #3498db;
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
   color: white;
-  margin-left: 10px;
+  box-shadow: 0 10px 25px rgba(59,130,246,0.25);
 }
 
 .btn-secondary:hover {
-  background: #2980b9;
-  transform: translateY(-2px);
+  transform: translateY(-3px);
 }
 
 /* СЕКЦИИ */
 .section {
-  padding: 40px 20px;
-  animation: fadeIn 0.8s ease;
+  padding: 50px 20px;
 }
 
-.cards {
+/* ЗАГОЛОВКИ */
+h2 {
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 30px;
+}
+
+/* КАРТОЧКИ */
+.grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 15px;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
 }
 
 .card {
-  background: white;
+  background: rgba(255,255,255,0.6);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.4);
   padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-  transition: 0.2s;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  transition: 0.25s;
 }
 
 .card:hover {
@@ -108,31 +120,54 @@ button, .btn {
 }
 
 /* ФОРМА */
-form {
-  max-width: 400px;
+.form-wrap {
+  max-width: 450px;
   margin: auto;
+  background: rgba(255,255,255,0.7);
+  backdrop-filter: blur(12px);
+  padding: 25px;
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,0.5);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.08);
 }
 
 input {
   width: 100%;
   padding: 12px;
   margin-top: 10px;
-  border-radius: 8px;
-  border: 1px solid #ddd;
+  border-radius: 10px;
+  border: 1px solid #e5e7eb;
+  outline: none;
+  transition: 0.2s;
 }
 
-form button {
+input:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59,130,246,0.15);
+}
+
+button {
   width: 100%;
-  margin-top: 10px;
-  background: #2ecc71;
+  margin-top: 12px;
+  padding: 14px;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #22c55e, #16a34a);
   color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+button:hover {
+  transform: translateY(-2px);
 }
 
 /* FOOTER */
 footer {
   text-align: center;
-  padding: 20px;
-  color: #777;
+  padding: 30px;
+  color: #6b7280;
   font-size: 14px;
 }
 </style>
@@ -143,7 +178,7 @@ footer {
 <!-- HERO -->
 <div class="hero">
   <h1>Уборка квартир в Днепре</h1>
-  <p>Быстро. Чисто. Без лишних разговоров.</p>
+  <p>Чистота, которая выглядит дорого</p>
 
   <div class="price">от 800 грн</div>
 
@@ -154,40 +189,42 @@ footer {
 <!-- ПРЕИМУЩЕСТВА -->
 <div class="section">
   <h2>Почему выбирают нас</h2>
-  <div class="cards">
-    <div class="card">✔ Опытные клинеры</div>
-    <div class="card">✔ Своя химия и техника</div>
-    <div class="card">✔ Быстро (2–3 часа)</div>
-    <div class="card">✔ Гарантия результата</div>
+  <div class="grid">
+    <div class="card">✨ Премиальная уборка</div>
+    <div class="card">🧼 Профессиональная химия</div>
+    <div class="card">⏱ Быстро и без задержек</div>
+    <div class="card">🛡 Гарантия результата</div>
   </div>
 </div>
 
-<!-- ЧТО ВХОДИТ -->
+<!-- УСЛУГИ -->
 <div class="section">
-  <h2>Что входит в уборку</h2>
-  <div class="cards">
-    <div class="card">Кухня: поверхности, плита, мойка</div>
-    <div class="card">Ванная: плитка, сантехника</div>
-    <div class="card">Комнаты: пыль, полы</div>
-    <div class="card">Коридор: уборка и порядок</div>
+  <h2>Что входит</h2>
+  <div class="grid">
+    <div class="card">Кухня — жир, поверхности, техника</div>
+    <div class="card">Ванная — плитка, сантехника</div>
+    <div class="card">Комнаты — пыль, полы, мебель</div>
+    <div class="card">Общий порядок и вынос мусора</div>
   </div>
 </div>
 
 <!-- ФОРМА -->
 <div class="section" id="form">
-  <h2 style="text-align:center;">Оставить заявку</h2>
+  <h2>Оставить заявку</h2>
 
-  <form action="https://formspree.io/f/mvzdrdba" method="POST">
-    <input type="text" name="name" placeholder="ФИО" required>
-    <input type="tel" name="phone" placeholder="Телефон" required>
-    <input type="text" name="city" placeholder="Город" required>
-    <input type="text" name="comment" placeholder="Какая уборка нужна?" required>
-    <button type="submit">Отправить заявку</button>
-  </form>
+  <div class="form-wrap">
+    <form action="https://formspree.io/f/mvzdrdba" method="POST">
+      <input type="text" name="name" placeholder="ФИО" required>
+      <input type="tel" name="phone" placeholder="Телефон" required>
+      <input type="text" name="city" placeholder="Город" required>
+      <input type="text" name="comment" placeholder="Какая уборка нужна?" required>
+      <button type="submit">Отправить заявку</button>
+    </form>
+  </div>
 </div>
 
 <footer>
-  © Клининговая служба Днепр
+  © Клининговый сервис Днепр
 </footer>
 
 </body>
