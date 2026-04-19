@@ -5,11 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Клининг сервис</title>
 
+<meta name="description" content="Профессиональная уборка квартир. Быстро, качественно, от 800 грн. Перезвоним за 5 минут.">
+
 <style>
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background: #f5f7fa;
+  background: linear-gradient(135deg, #eef2f3, #d9e2ec);
 }
 
 .container {
@@ -19,10 +21,11 @@ body {
 }
 
 .card {
-  background: white;
+  background: #ffffffcc;
   padding: 25px;
   border-radius: 12px;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+  border: 2px solid #e2e8f0;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.08);
 }
 
 h1 {
@@ -46,6 +49,7 @@ input, button {
   font-size: 16px;
   border-radius: 8px;
   border: 1px solid #ddd;
+  background: #fff;
 }
 
 button {
@@ -61,11 +65,21 @@ button:hover {
 
 .call-btn {
   display: block;
-  text-align: center;
+  width: 100%;
+  padding: 12px;
   margin-top: 15px;
-  text-decoration: none;
-  color: #2c3e50;
+  text-align: center;
+  background: #3498db;
+  color: white;
   font-weight: bold;
+  border-radius: 8px;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  transition: 0.2s ease;
+}
+
+.call-btn:hover {
+  background: #2980b9;
 }
 
 .price {
