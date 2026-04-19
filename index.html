@@ -19,34 +19,40 @@ body {
   color: #1f2937;
 }
 
-/* Анимация */
 @keyframes fadeUp {
   from {opacity: 0; transform: translateY(20px);}
   to {opacity: 1; transform: translateY(0);}
 }
 
-.container {
-  max-width: 1100px;
-  margin: auto;
-  padding: 20px;
-}
-
 /* HERO */
 .hero {
   text-align: center;
-  padding: 80px 20px;
+  padding: 90px 20px;
   animation: fadeUp 0.7s ease;
+  background: url("https://images.unsplash.com/photo-1581578731548-c64695cc6952") center/cover no-repeat;
+  color: white;
+  position: relative;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+}
+
+.hero * {
+  position: relative;
 }
 
 .hero h1 {
   font-size: 42px;
   margin-bottom: 10px;
-  letter-spacing: -1px;
 }
 
 .hero p {
   font-size: 18px;
-  color: #4b5563;
+  color: #e5e7eb;
 }
 
 .price {
@@ -88,17 +94,16 @@ body {
 
 /* СЕКЦИИ */
 .section {
-  padding: 50px 20px;
+  padding: 60px 20px;
 }
 
-/* ЗАГОЛОВКИ */
 h2 {
   text-align: center;
   font-size: 28px;
   margin-bottom: 30px;
 }
 
-/* КАРТОЧКИ */
+/* GRID */
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -106,9 +111,9 @@ h2 {
 }
 
 .card {
-  background: rgba(255,255,255,0.6);
+  background: rgba(255,255,255,0.7);
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(255,255,255,0.4);
+  border: 1px solid rgba(255,255,255,0.5);
   padding: 20px;
   border-radius: 16px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.05);
@@ -119,15 +124,22 @@ h2 {
   transform: translateY(-5px);
 }
 
+/* КАРТИНКИ В КАРТОЧКАХ */
+.card img {
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 10px;
+}
+
 /* ФОРМА */
 .form-wrap {
   max-width: 450px;
   margin: auto;
-  background: rgba(255,255,255,0.7);
+  background: rgba(255,255,255,0.75);
   backdrop-filter: blur(12px);
   padding: 25px;
   border-radius: 16px;
-  border: 1px solid rgba(255,255,255,0.5);
+  border: 1px solid rgba(255,255,255,0.6);
   box-shadow: 0 15px 40px rgba(0,0,0,0.08);
 }
 
@@ -190,21 +202,32 @@ footer {
 <div class="section">
   <h2>Почему выбирают нас</h2>
   <div class="grid">
-    <div class="card">✨ Премиальная уборка</div>
-    <div class="card">🧼 Профессиональная химия</div>
+    <div class="card">🧼 Премиальная уборка</div>
+    <div class="card">✨ Профессиональная химия</div>
     <div class="card">⏱ Быстро и без задержек</div>
     <div class="card">🛡 Гарантия результата</div>
   </div>
 </div>
 
-<!-- УСЛУГИ -->
+<!-- ЧТО ВХОДИТ -->
 <div class="section">
-  <h2>Что входит</h2>
+  <h2>Что входит в уборку</h2>
+
   <div class="grid">
-    <div class="card">Кухня — жир, поверхности, техника</div>
-    <div class="card">Ванная — плитка, сантехника</div>
-    <div class="card">Комнаты — пыль, полы, мебель</div>
-    <div class="card">Общий порядок и вынос мусора</div>
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea">
+      Кухня — поверхности и техника
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a">
+      Ванная — плитка и сантехника
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85">
+      Комнаты — пыль и полы
+    </div>
   </div>
 </div>
 
