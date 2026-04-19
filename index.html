@@ -17,21 +17,35 @@ body {
   font-family: 'Inter', sans-serif;
   background: radial-gradient(circle at top, #eaf2ff, #d9e2ec);
   color: #1f2937;
+  overflow-x: hidden;
 }
 
+/* ПЛАВНОЕ ПОЯВЛЕНИЕ */
 @keyframes fadeUp {
-  from {opacity: 0; transform: translateY(20px);}
+  from {opacity: 0; transform: translateY(30px);}
   to {opacity: 1; transform: translateY(0);}
+}
+
+.section {
+  padding: 60px 20px;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
+}
+
+.section.show {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* HERO */
 .hero {
   text-align: center;
-  padding: 90px 20px;
-  animation: fadeUp 0.7s ease;
-  background: url("https://images.unsplash.com/photo-1581578731548-c64695cc6952") center/cover no-repeat;
+  padding: 100px 20px;
+  background: url("https://images.unsplash.com/photo-1581578731548-c64695cc6952") center/cover fixed;
   color: white;
   position: relative;
+  animation: fadeUp 0.8s ease;
 }
 
 .hero::before {
@@ -46,19 +60,22 @@ body {
 }
 
 .hero h1 {
-  font-size: 42px;
+  font-size: 44px;
   margin-bottom: 10px;
+  animation: fadeUp 1s ease;
 }
 
 .hero p {
   font-size: 18px;
   color: #e5e7eb;
+  animation: fadeUp 1.2s ease;
 }
 
 .price {
   font-size: 24px;
   margin: 20px 0;
   font-weight: 700;
+  animation: fadeUp 1.4s ease;
 }
 
 /* КНОПКИ */
@@ -68,7 +85,7 @@ body {
   border-radius: 12px;
   font-weight: 600;
   text-decoration: none;
-  transition: 0.25s ease;
+  transition: 0.3s ease;
   margin: 5px;
 }
 
@@ -79,7 +96,7 @@ body {
 }
 
 .btn-primary:hover {
-  transform: translateY(-3px);
+  transform: translateY(-4px) scale(1.03);
 }
 
 .btn-secondary {
@@ -89,27 +106,23 @@ body {
 }
 
 .btn-secondary:hover {
-  transform: translateY(-3px);
+  transform: translateY(-4px) scale(1.03);
 }
 
-/* СЕКЦИИ */
-.section {
-  padding: 60px 20px;
-}
-
+/* СЕТКА */
 h2 {
   text-align: center;
   font-size: 28px;
   margin-bottom: 30px;
 }
 
-/* GRID */
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 20px;
 }
 
+/* КАРТОЧКИ */
 .card {
   background: rgba(255,255,255,0.7);
   backdrop-filter: blur(10px);
@@ -117,18 +130,22 @@ h2 {
   padding: 20px;
   border-radius: 16px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-  transition: 0.25s;
+  transition: 0.3s ease;
 }
 
 .card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-8px) scale(1.02);
 }
 
-/* КАРТИНКИ В КАРТОЧКАХ */
 .card img {
   width: 100%;
   border-radius: 12px;
   margin-bottom: 10px;
+  transition: 0.3s ease;
+}
+
+.card:hover img {
+  transform: scale(1.05);
 }
 
 /* ФОРМА */
@@ -158,6 +175,7 @@ input:focus {
   box-shadow: 0 0 0 3px rgba(59,130,246,0.15);
 }
 
+/* КНОПКА */
 button {
   width: 100%;
   margin-top: 12px;
@@ -168,11 +186,11 @@ button {
   color: white;
   font-weight: 600;
   cursor: pointer;
-  transition: 0.2s;
+  transition: 0.25s;
 }
 
 button:hover {
-  transform: translateY(-2px);
+  transform: translateY(-3px);
 }
 
 /* FOOTER */
@@ -209,7 +227,7 @@ footer {
   </div>
 </div>
 
-<!-- ЧТО ВХОДИТ -->
+<!-- УСЛУГИ -->
 <div class="section">
   <h2>Что входит в уборку</h2>
 
@@ -249,6 +267,25 @@ footer {
 <footer>
   © Клининговый сервис Днепр
 </footer>
+
+<!-- JS: появление блоков при скролле -->
+<script>
+const sections = document.querySelectorAll('.section');
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('show');
+    }
+  });
+}, {
+  threshold: 0.15
+});
+
+sections.forEach(sec => {
+  observer.observe(sec);
+});
+</script>
 
 </body>
 </html>
