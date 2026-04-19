@@ -1,55 +1,109 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <title>Клининг сервис</title>
-  <style>
-    body {
-      font-family: Arial;
-      text-align: center;
-      padding: 40px;
-      background: #f5f5f5;
-    }
-    .box {
-      background: white;
-      padding: 20px;
-      border-radius: 10px;
-      max-width: 400px;
-      margin: auto;
-    }
-    input, button {
-      width: 100%;
-      margin: 10px 0;
-      padding: 10px;
-      font-size: 16px;
-    }
-    button {
-      background: green;
-      color: white;
-      border: none;
-      cursor: pointer;
-    }
-    a.call {
-      display: block;
-      margin-top: 10px;
-      color: blue;
-      text-decoration: none;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Клининг сервис</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f5f7fa;
+}
+
+.container {
+  max-width: 500px;
+  margin: auto;
+  padding: 20px;
+}
+
+.card {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+h1 {
+  font-size: 26px;
+  margin-bottom: 10px;
+}
+
+p {
+  color: #555;
+}
+
+ul {
+  text-align: left;
+  padding-left: 20px;
+}
+
+input, button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+button {
+  background: #2ecc71;
+  color: white;
+  border: none;
+  font-weight: bold;
+}
+
+button:hover {
+  background: #27ae60;
+}
+
+.call-btn {
+  display: block;
+  text-align: center;
+  margin-top: 15px;
+  text-decoration: none;
+  color: #2c3e50;
+  font-weight: bold;
+}
+
+.price {
+  font-size: 18px;
+  margin: 10px 0;
+}
+</style>
+
 </head>
 <body>
 
-<div class="box">
-  <h1>Уборка квартир и домов</h1>
-  <p>Оставьте заявку — перезвоним за 5 минут</p>
+<div class="container">
+  <div class="card">
 
-<form action="https://formspree.io/f/mvzdrdba" method="POST">
-  <input type="text" name="name" placeholder="Ваше имя" required>
-  <input type="tel" name="phone" placeholder="Телефон" required>
-  <button type="submit">Оставить заявку</button>
-</form>
+    <h1>Профессиональная уборка квартир</h1>
+    <p>Быстро. Качественно. Без переплат.</p>
 
-  <a class="call" href="tel:+380XXXXXXXXX">📞 Позвонить сейчас</a>
+    <ul>
+      <li>✔ Уборка за 2–3 часа</li>
+      <li>✔ Свои средства и техника</li>
+      <li>✔ Гарантия чистоты</li>
+    </ul>
+
+    <div class="price">
+      от <b>800 грн</b>
+    </div>
+
+    <p><b>Оставьте заявку — перезвоним за 5 минут</b></p>
+
+    <form action="https://formspree.io/f/mvzdrdba" method="POST">
+      <input type="text" name="name" placeholder="Ваше имя" required>
+      <input type="tel" name="phone" placeholder="Телефон" required>
+      <button type="submit">Получить консультацию</button>
+    </form>
+
+    <a class="call-btn" href="tel:+380XXXXXXXXX">📞 Позвонить сейчас</a>
+
+  </div>
 </div>
 
 </body>
